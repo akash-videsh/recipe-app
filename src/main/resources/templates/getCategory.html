@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Fetch Recipe by Category</title>
+    <meta charset="UTF-8">
+    
+</head>
+ 
+<body class="container mt-5">
+ 
+    <h2>Fetch Recipe by Category</h2>
+ 
+    <form th:action="@{/fetchRecipe}" th:object="${category}" method="post" class="mt-4">
+ 
+       
+        <div class="mb-3">
+    <label for="category" class="form-label">Category ID:</label>
+    <select th:field="*{category}" class="form-control" id="category" required>
+        <option value="">Select a category</option>
+        <option th:each="cat : ${categories}" th:value="${cat.id}" th:text="${cat.name}"></option>
+    </select>
+</div>
+ 
+        <!-- Submit -->
+        <div class="mt-4">
+            <button type="submit" class="btn btn-primary">Search Recipe</button>
+        </div>
+ 
+    </form>
+ 
+</body>
+</html>

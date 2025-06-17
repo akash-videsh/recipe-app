@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<form  th:action="@{/addcategory}" th:object="${category}" method="post">
+	<table>
+			<tr>
+				<input type="text" th:field="*{name}" class="form-control" id="name" placeholder="Enter Category name" required>
+			</tr>
+			
+	</table>
+	<input type="submit" value="Save Category" />
+</form>
+</body>
+</html>
