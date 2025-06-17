@@ -25,4 +25,4 @@ COPY --from=builder /app/target/*.war recipe-app.war
 EXPOSE 9093:8080
  
 # Define the entrypoint to run the application
-ENTRYPOINT ["java", "-war", "recipe-app.war"]
+ENTRYPOINT ["java", "-jar", "recipe-app.war"]
